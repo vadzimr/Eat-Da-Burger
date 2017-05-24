@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2>Alter the Menu</h2>
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Burger</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each burger}}
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.burger_name}}</td>
+              <td>
+                <form class="form-inline" action="/delete/{{this.id}}?_method=DELETE" method="POST">
+                  <input type="hidden" name="devoured" value="1">
+                  <button class="btn btn-danger" type="submit">DELETE</button>
+                </form>
+              </td>
+            </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
